@@ -1,0 +1,57 @@
+.register {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #dadce0;
+}
+.register-subtext {
+  padding: 20px 0;
+  font-size: 14px;
+  color: #bdc3c7;
+  margin: 0px;
+}
+.register-password {
+  margin-bottom: 20px;
+}
+.register-text {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0px;
+}
+.register-email,
+.register-passwordconfirm,
+.register-password {
+  width: 90%;
+}
+.register-button {
+  width: 310px;
+  padding: 20px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #fd007d;
+  color: #000;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.register-button:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fd007d;
+}
+.register-google {
+  background-color: #fff;
+}
+.register div {
+  margin-top: 7px;
+}

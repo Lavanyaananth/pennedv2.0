@@ -4,6 +4,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
+  browserSessionPersistence,
+  setPersistence,
 } from "firebase/auth";
 const AuthContext = createContext();
 
@@ -19,11 +22,14 @@ export default function AuthProvider({ children }) {
   }
   async function login(email, password) {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await setPersistence(auth, browserSessionPersistence);
       return signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       console.log(error);
     }
+  }
+  function resetPassword(email) {
+    return sendPasswordResetEmail(auth, email);
   }
   function logout() {
     return auth.signOut();
@@ -33,11 +39,10 @@ export default function AuthProvider({ children }) {
       setCurrentUser(currentUser ? currentUser : null);
       setLoading(false);
     });
-
     return unsubscribe;
   }, []);
 
-  const value = { currentUser, login, logout, signup };
+  const value = { currentUser, login, logout, signup, resetPassword };
   return (
     <AuthContext.Provider value={value}>
       {!loading && children}

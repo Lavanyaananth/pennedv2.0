@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
 import Home from "./pages/Home/Home";
 import AuthProvider from "./context/AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
 function App() {
   return (
     <>
@@ -22,7 +23,15 @@ function App() {
                 path="resetpassword"
                 element={<ResetPassword />}
               ></Route>
-              <Route exact path="dashboard" element={<Dashboard />}></Route>
+              <Route
+                exact
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </BrowserRouter>
         </AuthProvider>

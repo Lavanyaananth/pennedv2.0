@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Card, Form, Button } from "react-bootstrap";
+import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
@@ -12,11 +12,12 @@ export default function Login() {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     console.log("hello");
     try {
       await login(emailRef.current.value, passwordRef.current.value);
       navigate("/dashboard");
-    } catch {
+    } catch (err) {
       setError("Failed to log in");
     }
   };
@@ -25,6 +26,7 @@ export default function Login() {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Hello welcome back</h2>
+          {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>

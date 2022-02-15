@@ -66,6 +66,11 @@ input {
   border-radius: 5px;
   cursor: pointer;
 }
+.login-button:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fd007d;
+}
 .login-google {
   background-color: #fff;
 }

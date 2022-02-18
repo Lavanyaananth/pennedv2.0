@@ -35,9 +35,10 @@ nav li:first-child {
   border-radius: 5px;
   padding: 10px;
   margin: 0;
-  width: 80px;
+  width: 90px;
+  background-color: #fd007d;
 }
 .signup-btn a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }

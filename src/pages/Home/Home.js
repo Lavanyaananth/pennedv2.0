@@ -7,10 +7,8 @@ const Home = () => {
     <>
       <Header></Header>
       <div className="heroContent">
-        <div className="heroContent">
-          <h1 className="heroTitle">It's a brand new day..!</h1>
-          <h1 className="heroTitle">Start penning your thoughts.</h1>
-        </div>
+        <h1 className="heroTitle">It's a brand new day..!</h1>
+        <h1 className="heroTitle">Start penning your thoughts.</h1>
       </div>
       <Footer></Footer>
     </>

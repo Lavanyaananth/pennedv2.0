@@ -6,7 +6,7 @@ import "./Login.css";
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const { login, googleSignIn } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -21,6 +21,17 @@ export default function Login() {
       setError("Failed to log in");
     }
   };
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await googleSignIn();
+      navigate("/dashboard");
+    } catch (err) {
+      setError("Failed to log in");
+    }
+  };
+
   return (
     <>
       <Card>
@@ -38,7 +49,7 @@ export default function Login() {
               ></Form.Control>
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label className="login-label">Password</Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordRef}
@@ -48,6 +59,13 @@ export default function Login() {
             </Form.Group>
             <Button className="login-button" type="submit">
               Login
+            </Button>
+            <Button
+              className="login-google"
+              type="submit"
+              onClick={handleGoogleSignIn}
+            >
+              Sign in with Google
             </Button>
           </Form>
         </Card.Body>

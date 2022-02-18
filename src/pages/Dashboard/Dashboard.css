@@ -1,3 +1,18 @@
-.dashboard {
-  color: cornflowerblue;
+.db-ul {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  padding-top: 30px;
+  padding-left: 80px;
+}
+.db-ul li {
+  list-style: none;
+}
+.logout-svg {
+  margin-left: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.db-container {
+  display: flex;
 }

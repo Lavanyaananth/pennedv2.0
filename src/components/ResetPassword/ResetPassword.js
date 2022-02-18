@@ -30,25 +30,27 @@ export default function ResetPassword() {
   };
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Reset Password</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                className="reset-email"
-                type="email"
-                ref={emailRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Button type="submit" className="reset-button">
-              Reset Password
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
+      <div className="reset">
+        <Card>
+          <Card.Body>
+            <h2 className="text-center mb-4">Reset Password</h2>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  className="reset-email"
+                  type="email"
+                  ref={emailRef}
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Button type="submit" className="reset-button">
+                Reset Password
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
     </>
   );
 }

@@ -37,48 +37,51 @@ export default function Register() {
   }
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Hello</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                className="register-email"
-                type="email"
-                ref={emailRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                className="register-password"
-                type="password"
-                ref={passwordRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Form.Group id="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                className="register-passwordconfirm"
-                type="password"
-                ref={passwordConfirmationRef}
-                required
-              ></Form.Control>
-            </Form.Group>
-            <Button
-              disabled={loading}
-              className="register-button"
-              type="submit"
-            >
-              Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
+      <div className="register">
+        <Card>
+          <Card.Body>
+            <h2 className="text-center mb-4">Hello</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  className="register-email"
+                  type="email"
+                  ref={emailRef}
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group id="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  className="register-password"
+                  type="password"
+                  ref={passwordRef}
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group id="passwordConfirmation">
+                <Form.Label>Password Confirmation</Form.Label>
+                <Form.Control
+                  className="register-passwordconfirm"
+                  type="password"
+                  ref={passwordConfirmationRef}
+                  required
+                ></Form.Control>
+              </Form.Group>
+              <Button
+                disabled={loading}
+                className="register-button"
+                type="submit"
+              >
+                Sign Up
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
+
       <div className="w-100 text-center mt-2">
         Already have an account? <Link to="/login">Login</Link>
       </div>

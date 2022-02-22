@@ -16,3 +16,15 @@
 .db-container {
   display: flex;
 }
+.db-entry {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  justify-items: center;
+  margin: 50px auto;
+  width: 85%;
+}
+.entry-card {
+  margin-right: 40px;
+  margin-top: 40px;
+}
